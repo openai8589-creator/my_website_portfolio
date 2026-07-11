@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DataAcademy | Master Data Science. Lead the Future.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Geist:wght@400;600;700;900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .dot-grid {
+            background-image: radial-gradient(#F1F5F9 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .bento-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 12px 32px rgba(15, 23, 42, 0.05);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-dim": "#dcd9db",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed": "#d8e2ff",
+                      "on-tertiary-fixed-variant": "#38485d",
+                      "inverse-surface": "#303032",
+                      "on-primary-container": "#7c839b",
+                      "on-surface-variant": "#45464d",
+                      "error": "#ba1a1a",
+                      "error-container": "#ffdad6",
+                      "surface-tint": "#565e74",
+                      "surface-bright": "#fcf8fa",
+                      "on-secondary-fixed-variant": "#004395",
+                      "on-secondary-fixed": "#001a42",
+                      "on-primary": "#ffffff",
+                      "surface-variant": "#e4e2e4",
+                      "primary-fixed-dim": "#bec6e0",
+                      "on-tertiary-fixed": "#0b1c30",
+                      "on-primary-fixed": "#131b2e",
+                      "surface": "#fcf8fa",
+                      "tertiary-fixed-dim": "#b7c8e1",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-container": "#0b1c30",
+                      "tertiary": "#000000",
+                      "background": "#fcf8fa",
+                      "on-surface": "#1b1b1d",
+                      "on-background": "#1b1b1d",
+                      "outline-variant": "#c6c6cd",
+                      "surface-container-highest": "#e4e2e4",
+                      "surface-container-low": "#f6f3f5",
+                      "surface-container-high": "#eae7e9",
+                      "secondary": "#0058be",
+                      "outline": "#76777d",
+                      "primary": "#000000",
+                      "on-tertiary-container": "#75859d",
+                      "surface-container": "#f0edef",
+                      "on-error": "#ffffff",
+                      "secondary-container": "#2170e4",
+                      "primary-container": "#131b2e",
+                      "primary-fixed": "#dae2fd",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed-dim": "#adc6ff",
+                      "tertiary-fixed": "#d3e4fe",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "inverse-on-surface": "#f3f0f2",
+                      "on-error-container": "#93000a",
+                      "on-secondary-container": "#fefcff",
+                      "inverse-primary": "#bec6e0"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "margin-desktop": "64px",
+                      "xs": "8px",
+                      "base": "4px",
+                      "gutter": "24px",
+                      "lg": "48px",
+                      "sm": "16px",
+                      "md": "24px",
+                      "xl": "80px"
+              },
+              "fontFamily": {
+                      "label-md": ["JetBrains Mono"],
+                      "body-md": ["Inter"],
+                      "headline-lg": ["Geist"],
+                      "label-sm": ["JetBrains Mono"],
+                      "headline-xl": ["Geist"],
+                      "body-lg": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "headline-md": ["Geist"],
+                      "headline-lg-mobile": ["Geist"]
+              },
+              "fontSize": {
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-secondary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 z-50 w-full bg-surface shadow-sm border-b border-outline-variant">
+<div class="flex items-center justify-between px-margin-mobile md:px-margin-desktop w-full max-w-7xl mx-auto h-20">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary text-headline-md" data-icon="analytics">analytics</span>
+<span class="text-headline-md font-headline-md font-bold text-primary">DataAcademy</span>
+</div>
+<nav class="hidden md:flex items-center gap-md">
+<a class="text-secondary border-b-2 border-secondary pb-1 font-label-md text-label-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md text-label-md" href="#">Courses</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md text-label-md" href="#">Certifications</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md text-label-md" href="#">Resources</a>
+</nav>
+<button class="bg-primary text-on-primary px-sm py-xs rounded-lg font-label-md text-label-md hover:opacity-90 transition-all scale-95 active:scale-90">
+                Sign In
+            </button>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-height-[707px] flex items-center overflow-hidden bg-surface-container-lowest dot-grid py-xl">
+<div class="absolute inset-0 pointer-events-none opacity-40">
+
+</div>
+<div class="relative z-10 w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-2 gap-xl items-center">
+<div class="space-y-md">
+<div class="inline-flex items-center gap-xs px-xs py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="flex h-2 w-2 rounded-full bg-white animate-pulse"></span>
+                        ENROLLMENT OPEN FOR FALL 2024
+                    </div>
+<h1 class="font-headline-xl text-headline-xl leading-tight text-primary">
+                        Master Data Science. <br/>
+<span class="text-secondary">Lead the Future.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                        Precision-engineered learning for technical mastery. Our curriculum is designed by industry leads to bridge the gap between academic theory and production-scale AI.
+                    </p>
+<div class="flex flex-wrap gap-sm pt-xs">
+<button class="bg-secondary text-on-secondary px-lg py-md rounded-lg font-label-md text-label-md shadow-lg hover:shadow-xl transition-all scale-100 active:scale-95">
+                            Explore Courses
+                        </button>
+<button class="border border-outline-variant bg-surface px-lg py-md rounded-lg font-label-md text-label-md text-primary hover:bg-surface-container transition-all">
+                            View Syllabus
+                        </button>
+</div>
+<div class="flex items-center gap-md pt-md border-t border-outline-variant max-w-sm">
+<div>
+<p class="font-headline-md text-headline-md text-primary">15k+</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Alumni</p>
+</div>
+<div class="w-px h-8 bg-outline-variant"></div>
+<div>
+<p class="font-headline-md text-headline-md text-primary">94%</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Placement Rate</p>
+</div>
+</div>
+</div>
+<div class="relative hidden md:block">
+<div class="relative rounded-xl overflow-hidden border border-outline-variant bg-surface shadow-2xl">
+<img class="w-full aspect-[4/3] object-cover" data-alt="A clean, minimalist high-tech workspace with a wide monitor displaying complex data visualizations and Python code snippets. Soft morning light enters from a large window, reflecting off a metallic desk surface. The aesthetic is professional, modern, and high-key, using a palette of white, slate, and vibrant blue accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd98Qt7zQgauNca3-dsLdDJvWlkASemYDc2CDeZ3RoeLI6SJrQE4vDFzD5gdg7PHe0x1oiAt2g4c2Jj0AYqxM0CflfgxDz4zfGuW4LObFHhDmuGazI5XaLx1ox0yj2lmw68xXlOAGz1g0k6fPycKV2zLD_sJFcKWqVWAaf1XrUARXpcsnASEHZqed1guV2KjzhUBL7rKJxW2aIJ1pwVQK4MHLw5Hgns_Hf6PI9NsxbH_E4Atpfd49rP5weQBEtEQpkfBdd2MlyH_ZN"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+<div class="absolute bottom-md left-md right-md glass-effect p-sm rounded-lg border border-white/20">
+<div class="flex items-center gap-sm">
+<div class="bg-secondary p-xs rounded-full">
+<span class="material-symbols-outlined text-white text-sm" data-icon="terminal">terminal</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-primary">Live Code Challenge</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Interactive IDE Learning Environment</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Courses -->
+<section class="py-xl bg-surface">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md mb-lg">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-xs">Industry-Vetted Curriculum</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+                            Each course is structured as a technical journey, moving from fundamental logic to enterprise-level implementation.
+                        </p>
+</div>
+<a class="text-secondary font-label-md text-label-md flex items-center gap-xs hover:underline" href="#">
+                        View Catalog 
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="grid md:grid-cols-3 gap-gutter">
+<!-- Course 1 -->
+<div class="bento-card bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden group">
+<div class="aspect-video relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A macro photography shot of a high-performance computer circuit board with glowing light pathways, representing neural networks and machine learning foundations. The lighting is focused and moody, emphasizing technical precision. Colors include deep blues, blacks, and electric blue highlights, matching a modern corporate technical aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRXH6byubdgR3mYslPfTs1jaIDIkxHJEhPyzTgnmkFDr0pGoSV8MliV28HBQjRglE4jDaW10bUwCPDHu-o5_raLQ58ADs6RdqrVP8vorLpFtLU4XWlGDZzQCL6NguUSFilbSbRTOi4ZeNRqeeEBN3ywvmthbMQo9_qIbZuvDxRjbNxrq7Szqd0l2Mn7PCZsvl6b_LnSH5Dq62vBxSGydYX1Gd22Tiut-Lz3Icie1ZsxghmWKAq9kTQpQ6ZjEchJ88GKIJl8WItZfor"/>
+<div class="absolute top-sm left-sm bg-primary/80 backdrop-blur text-white px-xs py-1 rounded font-label-sm text-label-sm uppercase">Beginner</div>
+</div>
+<div class="p-md space-y-sm">
+<p class="font-label-sm text-label-sm text-secondary">Foundations</p>
+<h3 class="font-headline-md text-headline-md text-primary">Machine Learning Foundations</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Master the mathematical core of prediction models and classical algorithms.</p>
+<div class="pt-sm flex items-center justify-between border-t border-outline-variant">
+<span class="font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span> 40 Hours
+                                </span>
+<span class="font-label-md text-label-md text-primary">$499</span>
+</div>
+</div>
+</div>
+<!-- Course 2 -->
+<div class="bento-card bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden group">
+<div class="aspect-video relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A stylized digital representation of Python code blocks floating in a 3D space, with elegant data structures connecting them. The scene is bright and airy with soft focus backgrounds. The color palette is dominated by clean white surfaces and professional navy blue tones, creating a clear and instructional atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC24-v_aIx91gK4cScw4in_DjeH4VyPKh0jZDPlCaKyCXrz1mJF1uVTWWs2YJRIpaCv9uv9RPV62gLk8b8oTX70XPUBJDFtz2EkrY_WGt3yw7aP3FSat5_3IcjZ8D0zvLVv9DvlQ31pt7jhC9kD1Jjo1WbcUeiuUESyqHhmHDZ-co-Bs6Wj0H9vRjDdDnMAabttkOGqX56CVkWBYFU8E3XlO4Fskq6WapfublnGKyAceiiLxN2HJ8FloVr2G3cBsNy3ch4qA_vuWD2S"/>
+<div class="absolute top-sm left-sm bg-primary/80 backdrop-blur text-white px-xs py-1 rounded font-label-sm text-label-sm uppercase">Intermediate</div>
+</div>
+<div class="p-md space-y-sm">
+<p class="font-label-sm text-label-sm text-secondary">Data Ops</p>
+<h3 class="font-headline-md text-headline-md text-primary">Python for Data Science</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Go beyond scripts. Build production-grade data pipelines and automated analysis tools.</p>
+<div class="pt-sm flex items-center justify-between border-t border-outline-variant">
+<span class="font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span> 55 Hours
+                                </span>
+<span class="font-label-md text-label-md text-primary">$649</span>
+</div>
+</div>
+</div>
+<!-- Course 3 -->
+<div class="bento-card bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden group">
+<div class="aspect-video relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A conceptual visualization of an advanced artificial intelligence brain mesh glowing with gold and electric blue energy in a dark, sophisticated data center environment. The image communicates high-level engineering and future-forward technology. The style is sleek, cinematic, and emphasizes technical mastery and professional depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjnJKTmIyXm8Iy7baq3xwdzQF-JB9tWjNj17Sp8r46CCTqFyxsZ56CQS5xTnkifxUIF-Ehngb0KiUokZ5hH0pNVO7Veni3plBT0kVjUK9Q9vsiDi674msw6KaMcIyzGJjJncD_mlKjgYyMy0aGZMfHX6aZ1C00lqKGmcUq_UTnWHO3FBvNgipttyMA_IUU30-_jbAXs6yVrPpvGCUdtDju-Dhs8X0cC-JETHOkW6boMDPUEO_XzdmnK997uz4ewkKMA96i_I8LMeLV"/>
+<div class="absolute top-sm left-sm bg-primary/80 backdrop-blur text-white px-xs py-1 rounded font-label-sm text-label-sm uppercase">Advanced</div>
+</div>
+<div class="p-md space-y-sm">
+<p class="font-label-sm text-label-sm text-secondary">Specialization</p>
+<h3 class="font-headline-md text-headline-md text-primary">Advanced AI &amp; Neural Nets</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Architecting large language models and vision-based AI for enterprise scalability.</p>
+<div class="pt-sm flex items-center justify-between border-t border-outline-variant">
+<span class="font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span> 72 Hours
+                                </span>
+<span class="font-label-md text-label-md text-primary">$899</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-xl bg-surface-container-low relative overflow-hidden">
+<div class="absolute top-0 right-0 w-1/3 h-full dot-grid opacity-30"></div>
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<div class="text-center mb-lg">
+<h2 class="font-headline-lg text-headline-lg text-primary">Career Transformations</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Real outcomes from our global alumni network.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-gutter">
+<!-- Testimonial 1 -->
+<div class="bg-surface p-lg rounded-xl border border-outline-variant shadow-sm relative">
+<span class="material-symbols-outlined text-secondary/10 text-8xl absolute top-xs right-xs -z-10" data-icon="format_quote">format_quote</span>
+<div class="flex items-center gap-sm mb-sm">
+<div class="w-12 h-12 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a middle-aged woman with a confident, warm expression, wearing corporate attire. The background is a brightly lit, modern office space with soft bokeh. The overall feel is professional, successful, and inspiring, aligned with a corporate light-mode design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlKQbmcAYolSpkr6Zo9DDSncpjTv5O_kpDlVIAojhpFNTZmrM0BJ5OlSmTTK31B8VFASIiRbjMj24fCWza1n28rwe-_BVh0RAT-MdHy6Zeu1lES8xVHvRCDcp7DuuXXRrtJnJK0rXTyWQaXzTszSK-XysJYfAXhrCajmqfADP-WkKQyjfi3g-UlDPeM3WpaZBfJeBmI_Tq7-VjY33gHC-aZlPDtBKCfx5NartBFhNN2WvL8XOeNRKsEyjvSAAneSL4vAYLyslqZbNI"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary">Dr. Elena Ross</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Senior Data Scientist at Meta</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-primary italic leading-relaxed">
+                            "The technical rigor at DataAcademy is unmatched. Unlike other platforms that offer superficial tutorials, this curriculum forced me to understand the 'why' behind the math. It was the pivot point for my career."
+                        </p>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface p-lg rounded-xl border border-outline-variant shadow-sm relative">
+<span class="material-symbols-outlined text-secondary/10 text-8xl absolute top-xs right-xs -z-10" data-icon="format_quote">format_quote</span>
+<div class="flex items-center gap-sm mb-sm">
+<div class="w-12 h-12 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A headshot of a young professional man in a clean white shirt, standing in a sleek architectural space with glass and steel elements. He looks focused and ambitious. The lighting is clean and balanced, reflecting a modern tech-industry professional portrait." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcvSVaN4A3yf1Ro_1CnzZSrq3ixKeV3sgJi8M1OzI31QwbUhg5PdeTLNrCSEkyAJmfXirLPg4EbbxGGJ4dS3i36ZY0M31TavJ970ulGOAjlsPAZ3dR75nu057RVtQ1nz0pcE-DMCUbByfU3fDGUbLidkJWlEzPfRA3v_JkDiAVCVDSAiOEBS8l-dOC1iBm6vo8Hn6WwCAmPlLBer347DCUykEDesQN31AZirUoZajoG7icJIENjwj4rqeJdQ8QpRzo8W0oM2kKexLF"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary">Marcus Chen</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">ML Engineer at Stripe</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-primary italic leading-relaxed">
+                            "The project-based approach mimics real engineering environments. By the time I interviewed, I had a portfolio of production-ready models that spoke louder than my resume ever could."
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-xl px-margin-mobile md:px-margin-desktop">
+<div class="max-w-7xl mx-auto bg-primary rounded-2xl p-xl flex flex-col items-center text-center space-y-md text-on-primary relative overflow-hidden">
+
+<div class="relative z-10 max-w-2xl">
+<h2 class="font-headline-xl text-headline-xl mb-sm">Ready to rewrite your trajectory?</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container mb-lg">
+                        Join 1,200+ students currently mastering the next generation of data intelligence.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-sm justify-center">
+<button class="bg-on-primary text-primary px-xl py-md rounded-lg font-label-md text-label-md hover:bg-surface-container transition-all">
+                            Apply Now
+                        </button>
+<button class="border border-on-primary-container text-on-primary px-xl py-md rounded-lg font-label-md text-label-md hover:bg-white/10 transition-all">
+                            Talk to an Advisor
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-lg px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter border-t border-outline-variant">
+<div class="space-y-sm">
+<span class="font-headline-sm text-headline-sm font-black text-primary">DataAcademy</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                © 2024 DataAcademy. Precision-engineered learning for technical mastery.
+            </p>
+</div>
+<div class="flex flex-col gap-xs">
+<h4 class="font-label-md text-label-md text-primary font-bold">Programs</h4>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all" href="#">Course Catalog</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all" href="#">Instructor Portal</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all" href="#">Career Services</a>
+</div>
+<div class="flex flex-col gap-xs">
+<h4 class="font-label-md text-label-md text-primary font-bold">Legal</h4>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-all" href="#">Cookie Settings</a>
+</div>
+<div class="space-y-sm">
+<h4 class="font-label-md text-label-md text-primary font-bold">Connect</h4>
+<div class="flex gap-sm">
+<a class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-secondary hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+</a>
+<a class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-secondary hover:bg-surface-container-highest transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions and scroll effects
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100');
+                        entry.target.classList.remove('opacity-0', 'translate-y-8');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.bento-card').forEach(card => {
+                card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
+                observer.observe(card);
+            });
+        });
+    </script>
+</body></html>
